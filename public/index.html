@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VNL – Itsepalvelu kirjanpito ja taloushallinto</title>
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo" aria-label="VNL">
+      <img src="logo.png" alt="VNL Trading Oy" class="logo-img" width="126" height="44">
+      <span class="logo-text"><small data-i18n="brand.tag"></small></span>
+    </a>
+    <nav>
+      <a href="#ominaisuudet" data-i18n="nav.features"></a>
+      <a href="#laskuri" data-i18n="nav.calc"></a>
+      <a href="#prosessi" data-i18n="nav.how"></a>
+      <a href="#hinnat" data-i18n="nav.pricing"></a>
+      <a href="#yhteys" class="btn btn-gold btn-sm" data-i18n="nav.start"></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="fi" title="Suomi">FI</button>
+        <button type="button" data-lang="vi" title="Tiếng Việt">VI</button>
+        <button type="button" data-lang="en" title="English">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge" data-i18n="hero.badge"></span>
+      <h1 data-i18n="hero.title"></h1>
+      <p class="lead" data-i18n="hero.lead"></p>
+      <div class="cta">
+        <a href="#yhteys" class="btn btn-gold" data-i18n="hero.cta1"></a>
+        <a href="#prosessi" class="btn btn-outline" data-i18n="hero.cta2"></a>
+      </div>
+      <ul class="trust">
+        <li data-i18n="trust.1"></li>
+        <li data-i18n="trust.2"></li>
+        <li data-i18n="trust.3"></li>
+      </ul>
+    </div>
+
+    <div class="dash" aria-hidden="true">
+      <div class="dash-head"><span data-i18n="dash.head"></span><span class="dot"></span></div>
+      <div class="dash-kpis">
+        <div><small data-i18n="dash.rev"></small><strong>48 320 €</strong></div>
+        <div><small data-i18n="dash.cost"></small><strong>21 940 €</strong></div>
+        <div><small data-i18n="dash.vat"></small><strong class="gold">5 218 €</strong></div>
+      </div>
+      <div class="bars">
+        <i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i>
+        <i style="height:70%"></i><i style="height:62%"></i><i class="hl" style="height:90%"></i>
+      </div>
+      <div class="dash-foot"><span data-i18n="dash.next"></span> <b>12.11.2026</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="ominaisuudet" class="section">
+  <div class="container">
+    <h2 data-i18n="feat.title"></h2>
+    <p class="sub" data-i18n="feat.sub"></p>
+    <div class="cards">
+      <article class="card"><div class="ico">📑</div><h3 data-i18n="f1.t"></h3><p data-i18n="f1.p"></p></article>
+      <article class="card"><div class="ico">🧾</div><h3 data-i18n="f2.t"></h3><p data-i18n="f2.p"></p></article>
+      <article class="card"><div class="ico">⚖️</div><h3 data-i18n="f3.t"></h3><p data-i18n="f3.p"></p></article>
+      <article class="card"><div class="ico">🏦</div><h3 data-i18n="f4.t"></h3><p data-i18n="f4.p"></p></article>
+      <article class="card"><div class="ico">📊</div><h3 data-i18n="f5.t"></h3><p data-i18n="f5.p"></p></article>
+      <article class="card"><div class="ico">🔒</div><h3 data-i18n="f6.t"></h3><p data-i18n="f6.p"></p></article>
+    </div>
+  </div>
+</section>
+
+<section id="laskuri" class="section alt">
+  <div class="container calc-grid">
+    <div>
+      <h2 data-i18n="calc.title"></h2>
+      <p class="sub left" data-i18n="calc.sub"></p>
+      <ul class="notes">
+        <li><b>25,5 %</b><span data-i18n="calc.n1"></span></li>
+        <li><b>14 %</b><span data-i18n="calc.n2"></span></li>
+        <li><b>10 %</b><span data-i18n="calc.n3"></span></li>
+        <li><b>0 %</b><span data-i18n="calc.n4"></span></li>
+      </ul>
+    </div>
+    <form class="calc" id="calc" autocomplete="off">
+      <label><span data-i18n="calc.amount"></span>
+        <input type="number" id="amount" value="1000" min="0" step="0.01" inputmode="decimal">
+      </label>
+      <label><span data-i18n="calc.rate"></span>
+        <select id="rate">
+          <option value="25.5" selected>25,5 %</option>
+          <option value="14">14 %</option>
+          <option value="10">10 %</option>
+          <option value="0">0 %</option>
+        </select>
+      </label>
+      <div class="seg">
+        <label><input type="radio" name="mode" value="net" checked> <span data-i18n="calc.net"></span></label>
+        <label><input type="radio" name="mode" value="gross"> <span data-i18n="calc.gross"></span></label>
+      </div>
+      <div class="result">
+        <div><small data-i18n="calc.rnet"></small><strong id="r-net">–</strong></div>
+        <div><small data-i18n="calc.rvat"></small><strong id="r-vat" class="gold">–</strong></div>
+        <div><small data-i18n="calc.rgross"></small><strong id="r-gross">–</strong></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="prosessi" class="section">
+  <div class="container">
+    <h2 data-i18n="how.title"></h2>
+    <div class="steps">
+      <div class="step"><span>1</span><h3 data-i18n="s1.t"></h3><p data-i18n="s1.p"></p></div>
+      <div class="step"><span>2</span><h3 data-i18n="s2.t"></h3><p data-i18n="s2.p"></p></div>
+      <div class="step"><span>3</span><h3 data-i18n="s3.t"></h3><p data-i18n="s3.p"></p></div>
+      <div class="step"><span>4</span><h3 data-i18n="s4.t"></h3><p data-i18n="s4.p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hinnat" class="section alt">
+  <div class="container">
+    <h2 data-i18n="price.title"></h2>
+    <p class="sub" data-i18n="price.sub"></p>
+    <div class="plans">
+      <div class="plan">
+        <h3 data-i18n="p1.n"></h3>
+        <div class="price">19 €<small data-i18n="price.mo"></small></div>
+        <ul><li data-i18n="p1.a"></li><li data-i18n="p1.b"></li><li data-i18n="p1.c"></li><li data-i18n="p1.d"></li></ul>
+        <a href="#yhteys" class="btn btn-outline" data-i18n="price.pick"></a>
+      </div>
+      <div class="plan featured">
+        <span class="ribbon" data-i18n="price.pop"></span>
+        <h3 data-i18n="p2.n"></h3>
+        <div class="price">49 €<small data-i18n="price.mo"></small></div>
+        <ul><li data-i18n="p2.a"></li><li data-i18n="p2.b"></li><li data-i18n="p2.c"></li><li data-i18n="p2.d"></li></ul>
+        <a href="#yhteys" class="btn btn-gold" data-i18n="price.pick"></a>
+      </div>
+      <div class="plan">
+        <h3 data-i18n="p3.n"></h3>
+        <div class="price">99 €<small data-i18n="price.mo"></small></div>
+        <ul><li data-i18n="p3.a"></li><li data-i18n="p3.b"></li><li data-i18n="p3.c"></li><li data-i18n="p3.d"></li></ul>
+        <a href="#yhteys" class="btn btn-outline" data-i18n="price.pick"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="yhteys" class="section">
+  <div class="container contact">
+    <h2 data-i18n="contact.title"></h2>
+    <p class="sub" data-i18n="contact.sub"></p>
+    <form id="signup" class="signup">
+      <input type="email" id="email" data-i18n-ph="contact.ph" required>
+      <button class="btn btn-gold" type="submit" data-i18n="contact.send"></button>
+    </form>
+    <p id="msg" class="msg" role="status"></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p data-i18n="footer"></p>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

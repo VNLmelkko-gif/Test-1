@@ -1,0 +1,10 @@
+{
+  "name": "kirjanpito-suomi",
+  "version": "1.0.0",
+  "description": "Itsepalvelu kirjanpito- ja taloushallintojärjestelmä suomalaisille yrityksille",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
