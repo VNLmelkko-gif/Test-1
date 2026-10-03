@@ -187,7 +187,24 @@
   </div>
 </footer>
 
+
+<button type="button" id="chat-toggle" class="chat-toggle" aria-expanded="false" aria-controls="chat-panel" data-i18n-aria="chat.open">💬</button>
+<section id="chat-panel" class="chat-panel" hidden aria-label="Chat">
+  <header class="chat-head">
+    <div><strong data-i18n="chat.title"></strong><small data-i18n="chat.sub"></small></div>
+    <button type="button" id="chat-close" class="chat-close" aria-label="×">×</button>
+  </header>
+  <div id="chat-log" class="chat-log" aria-live="polite">
+    <div class="msg-bot" data-i18n="chat.hello"></div>
+  </div>
+  <form id="chat-form" class="chat-form" autocomplete="off">
+    <input type="text" id="chat-input" maxlength="500" data-i18n-ph="chat.ph" required>
+    <button type="submit" class="btn btn-gold btn-sm" data-i18n="chat.send"></button>
+  </form>
+</section>
+
 <script src="i18n.js"></script>
 <script src="app.js"></script>
+<script src="chat.js"></script>
 </body>
 </html>

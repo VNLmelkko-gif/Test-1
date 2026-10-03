@@ -42,6 +42,7 @@ const I18N = {
     'contact.title': 'Aloita <span class="gold">tänään</span>',
     'contact.sub': 'Jätä sähköpostiosoitteesi, niin lähetämme käyttöönotto-ohjeet.',
     'contact.send': 'Lähetä', 'contact.ph': 'nimi@yritys.fi', 'contact.ok': 'Kiitos! Ohjeet lähetetään osoitteeseen {email} (demo).',
+    'chat.title': 'Kirjanpitäjä VNL', 'chat.sub': 'Vastaa yleisiin kysymyksiin', 'chat.hello': 'Hei! Olen VNL:n kirjanpitäjä. Kysy minulta palvelustamme – vastaan siihen, mitä tiedän palvelun käytöstä.', 'chat.ph': 'Kirjoita kysymyksesi…', 'chat.send': 'Lähetä', 'chat.err': 'Pahoittelut, vastaaminen ei onnistunut juuri nyt. Yritä hetken kuluttua uudelleen.', 'chat.wait': 'Kirjoittaa…', 'chat.open': 'Avaa chat',
     'footer': '© 2026 VNL · Sivuston tekijänoikeudet: VNL Trading Oy, Helsinki, Suomi. Tietolähteet: Verohallinto, PRH, YTJ, Tulorekisteri ja alakohtainen lainsäädäntö.<br>Lisätietoja ja neuvontaa: VNL, puhelin/WhatsApp/Zalo: +358 413 292 169 / +84 934 22 55 19.'
   },
   vi: {
@@ -87,6 +88,7 @@ const I18N = {
     'contact.title': 'Bắt đầu <span class="gold">ngay hôm nay</span>',
     'contact.sub': 'Để lại email, chúng tôi sẽ gửi hướng dẫn sử dụng.',
     'contact.send': 'Gửi', 'contact.ph': 'ten@congty.fi', 'contact.ok': 'Cảm ơn! Hướng dẫn sẽ được gửi tới {email} (bản demo).',
+    'chat.title': 'Kế toán viên VNL', 'chat.sub': 'Giải đáp thắc mắc thường gặp', 'chat.hello': 'Xin chào! Mình là kế toán viên của VNL. Bạn cứ hỏi về dịch vụ của chúng mình nhé – mình sẽ trả lời trong phạm vi thông tin về dịch vụ.', 'chat.ph': 'Nhập câu hỏi của bạn…', 'chat.send': 'Gửi', 'chat.err': 'Xin lỗi, hiện mình chưa trả lời được. Bạn vui lòng thử lại sau ít phút nhé.', 'chat.wait': 'Đang trả lời…', 'chat.open': 'Mở khung chat',
     'footer': '© 2026 VNL · Trang ứng dụng thuộc bản quyền của VNL Trading Oy tại Helsinki, Phần Lan. Nguồn dữ liệu: Verohallinto, PRH, YTJ, Tulorekisteri và các luật chuyên ngành.<br>Để được tư vấn chi tiết liên hệ VNL qua Hotline/Whatsapp/Zalo: +358 413 292 169 / +84 934 22 55 19.'
   },
   en: {
@@ -132,6 +134,7 @@ const I18N = {
     'contact.title': 'Get started <span class="gold">today</span>',
     'contact.sub': 'Leave your email and we will send you the onboarding guide.',
     'contact.send': 'Send', 'contact.ph': 'name@company.fi', 'contact.ok': 'Thank you! The guide will be sent to {email} (demo).',
+    'chat.title': 'VNL Accountant', 'chat.sub': 'Answers to common questions', 'chat.hello': 'Hello! I am the accountant at VNL. Ask me about our service – I can answer within the information we have about it.', 'chat.ph': 'Type your question…', 'chat.send': 'Send', 'chat.err': 'Sorry, I could not answer right now. Please try again in a moment.', 'chat.wait': 'Typing…', 'chat.open': 'Open chat',
     'footer': '© 2026 VNL · This application is copyrighted by VNL Trading Oy, Helsinki, Finland. Data sources: Verohallinto (Finnish Tax Administration), PRH, YTJ, Tulorekisteri (Incomes Register) and sector-specific legislation.<br>For detailed advice, contact VNL via Hotline/WhatsApp/Zalo: +358 413 292 169 / +84 934 22 55 19.'
   }
 };
@@ -155,6 +158,7 @@ function applyLang(lang) {
     el.placeholder = t(el.dataset.i18nPh);
     el.setAttribute('aria-label', el.placeholder);
   });
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
   document.querySelectorAll('.lang button').forEach((b) => {
     const on = b.dataset.lang === lang;
     b.classList.toggle('active', on);
